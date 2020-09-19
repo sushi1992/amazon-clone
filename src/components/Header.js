@@ -21,10 +21,8 @@ function Header() {
             {/* Logo on left */}
             <Link to="/">
                 <img
-
                     className="header__logo"
-                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-                    alt="" />
+                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
             </Link>
 
             {/* Search box */}
@@ -52,18 +50,18 @@ function Header() {
                         </div>
                     </Link>
                 }
-                {/* Link 2 - Return Order */}
-                <Link to="/" className="header__link">
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Return</span>
-                        <span className="header__optionLineTwo">& Orders</span>
-                    </div>
-                </Link>
-                {/* Link 3 - Prime */}
+                {/* Link 2 - Prime */}
                 <Link to="/" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Your</span>
                         <span className="header__optionLineTwo">Prime</span>
+                    </div>
+                </Link>
+                {/* Link 3 - Orders */}
+                <Link to='/orders' className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">Returns</span>
+                        <span className="header__optionLineTwo">& Orders</span>
                     </div>
                 </Link>
                 {/* Basket*/}

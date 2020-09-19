@@ -5,9 +5,17 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Cart from './components/Cart';
 import Login from './components/Login';
+import Payment from "./components/Payment";
+import Orders from "./components/Orders";
 import { useStateValue } from './context/StateProvider';
 import { useEffect } from 'react';
 import { auth } from './firebase/firebase';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(
+  "pk_test_FMRUm6TZeOBtW3E2SQinn9PG"
+);
 
 function App() {
 
@@ -41,12 +49,22 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/cart">
             <Header />
             <Cart />
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route path="/">
             <Header />

@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 
 // Need Context API
-// 1. To track basket
+// 1. To track cart
 // 2. To Track user
 
 // This is Data layer
